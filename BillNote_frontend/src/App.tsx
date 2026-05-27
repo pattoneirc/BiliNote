@@ -29,6 +29,7 @@ const Monitor = lazy(() => import('@/pages/SettingPage/Monitor.tsx'))
 const FavoritesMonitor = lazy(() => import('@/pages/SettingPage/FavoritesMonitor.tsx'))
 const DailyDigest = lazy(() => import('@/pages/SettingPage/DailyDigest.tsx'))
 const NotifySettings = lazy(() => import('@/pages/SettingPage/NotifySettings.tsx'))
+const GeneralSettings = lazy(() => import('@/pages/SettingPage/General.tsx'))
 const Downloader = lazy(() => import('@/pages/SettingPage/Downloader.tsx'))
 const DownloaderForm = lazy(() => import('@/components/Form/DownloaderForm/Form.tsx'))
 const TranscriberPage = lazy(() => import('@/pages/SettingPage/transcriber.tsx'))
@@ -72,7 +73,8 @@ function App() {
             <Route path="/" element={<OnboardingGuard><Index /></OnboardingGuard>}>
               <Route index element={<HomePage />} />
               <Route path="settings" element={<SettingPage />}>
-                <Route index element={<Navigate to="model" replace />} />
+                <Route index element={<Navigate to="general" replace />} />
+                <Route path="general" element={<GeneralSettings />} />
                 <Route path="model" element={<Model />}>
                   <Route path="new" element={<ProviderForm isCreate />} />
                   <Route path=":id" element={<ProviderForm />} />
