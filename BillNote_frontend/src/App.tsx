@@ -26,6 +26,9 @@ const Model = lazy(() => import('@/pages/SettingPage/Model.tsx'))
 const ProviderForm = lazy(() => import('@/components/Form/modelForm/Form.tsx'))
 const AboutPage = lazy(() => import('@/pages/SettingPage/about.tsx'))
 const Monitor = lazy(() => import('@/pages/SettingPage/Monitor.tsx'))
+const FavoritesMonitor = lazy(() => import('@/pages/SettingPage/FavoritesMonitor.tsx'))
+const DailyDigest = lazy(() => import('@/pages/SettingPage/DailyDigest.tsx'))
+const NotifySettings = lazy(() => import('@/pages/SettingPage/NotifySettings.tsx'))
 const Downloader = lazy(() => import('@/pages/SettingPage/Downloader.tsx'))
 const DownloaderForm = lazy(() => import('@/components/Form/DownloaderForm/Form.tsx'))
 const TranscriberPage = lazy(() => import('@/pages/SettingPage/transcriber.tsx'))
@@ -78,6 +81,9 @@ function App() {
                   <Route path=":id" element={<DownloaderForm />} />
                 </Route>
                 <Route path="transcriber" element={<TranscriberPage />} />
+                <Route path="favorites-monitor" element={<FavoritesMonitor />} />
+                <Route path="daily-digest" element={<DailyDigest />} />
+                <Route path="notify" element={<NotifySettings />} />
                 <Route path="monitor" element={<Monitor />}></Route>
                 <Route path="about" element={<AboutPage />}></Route>
                 <Route path="*" element={<NotFoundPage />} />

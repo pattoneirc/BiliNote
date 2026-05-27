@@ -4,6 +4,9 @@ import {
   HardDriveDownload,
   Info,
   Activity,
+  Heart,
+  FileText,
+  Bell,
 } from 'lucide-react'
 import MenuBar, { IMenuProps } from '@/pages/SettingPage/components/menuBar.tsx'
 
@@ -27,13 +30,24 @@ const Menu = () => {
       icon: <HardDriveDownload />,
       path: '/settings/download',
     },
-    // //其他配置
-    // {
-    //   id: 'prompt',
-    //   name: '提示词设置',
-    //   icon: <SquareChevronRight />,
-    //   path: '/settings/prompt',
-    // },
+    {
+      id: 'favorites-monitor',
+      name: '收藏监控',
+      icon: <Heart />,
+      path: '/settings/favorites-monitor',
+    },
+    {
+      id: 'daily-digest',
+      name: '每日汇总',
+      icon: <FileText />,
+      path: '/settings/daily-digest',
+    },
+    {
+      id: 'notify',
+      name: '通知设置',
+      icon: <Bell />,
+      path: '/settings/notify',
+    },
     {
       id: 'monitor',
       name: '部署监控',
@@ -46,12 +60,6 @@ const Menu = () => {
       icon: <Info />,
       path: '/settings/about',
     },
-    // {
-    //   id: 'other',
-    //   name: '其他配置',
-    //   icon: <Wrench />,
-    //   path: '/settings/other',
-    // },
   ]
   return (
     <div className="flex h-full flex-col">
